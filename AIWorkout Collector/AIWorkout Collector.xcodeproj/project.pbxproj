@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		488C22D52636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		488C22DA2636FD2700EB72F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22D92636FD2700EB72F2 /* Assets.xcassets */; };
+		488C22E12636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 488C22E02636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		488C22E62636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22E52636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift */; };
+		488C22E82636FD2700EB72F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22E72636FD2700EB72F2 /* ContentView.swift */; };
+		488C22EA2636FD2700EB72F2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22E92636FD2700EB72F2 /* NotificationController.swift */; };
+		488C22EC2636FD2700EB72F2 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22EB2636FD2700EB72F2 /* NotificationView.swift */; };
+		488C22EE2636FD2700EB72F2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22ED2636FD2700EB72F2 /* ComplicationController.swift */; };
+		488C22F02636FD2800EB72F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22EF2636FD2800EB72F2 /* Assets.xcassets */; };
+		488C22F32636FD2800EB72F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22F22636FD2800EB72F2 /* Preview Assets.xcassets */; };
+		488C23072636FD6300EB72F2 /* DataCollectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C23062636FD6300EB72F2 /* DataCollectorView.swift */; };
+		488C23102636FE0900EB72F2 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C230F2636FE0900EB72F2 /* MotionManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		488C22D62636FD2400EB72F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 488C22CA2636FD2300EB72F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488C22D32636FD2400EB72F2;
+			remoteInfo = "AIWorkout Collector Template WatchKit App";
+		};
+		488C22E22636FD2700EB72F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 488C22CA2636FD2300EB72F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488C22DF2636FD2700EB72F2;
+			remoteInfo = "AIWorkout Collector Template WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		488C22FB2636FD2800EB72F2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				488C22E12636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488C22FF2636FD2800EB72F2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				488C22D52636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		488C22D02636FD2400EB72F2 /* AIWorkout Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AIWorkout Collector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AIWorkout Collector WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		488C22D92636FD2700EB72F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		488C22DB2636FD2700EB72F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		488C22E02636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AIWorkout Collector WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		488C22E52636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIWorkout_Collector_TemplateApp.swift; sourceTree = "<group>"; };
+		488C22E72636FD2700EB72F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		488C22E92636FD2700EB72F2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		488C22EB2636FD2700EB72F2 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		488C22ED2636FD2700EB72F2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		488C22EF2636FD2800EB72F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		488C22F22636FD2800EB72F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		488C22F42636FD2800EB72F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		488C22F52636FD2800EB72F2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		488C23062636FD6300EB72F2 /* DataCollectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCollectorView.swift; sourceTree = "<group>"; };
+		488C230F2636FE0900EB72F2 /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionManager.swift; path = "../../QuickWorkout Collector/AIWorkout Collector WatchKit Extension/MotionManager.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		488C22DD2636FD2700EB72F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		488C22C92636FD2300EB72F2 = {
+			isa = PBXGroup;
+			children = (
+				488C22D82636FD2400EB72F2 /* AIWorkout Collector WatchKit App */,
+				488C22E42636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension */,
+				488C22D12636FD2400EB72F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		488C22D12636FD2400EB72F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				488C22D02636FD2400EB72F2 /* AIWorkout Collector.app */,
+				488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */,
+				488C22E02636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		488C22D82636FD2400EB72F2 /* AIWorkout Collector WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				488C22D92636FD2700EB72F2 /* Assets.xcassets */,
+				488C22DB2636FD2700EB72F2 /* Info.plist */,
+			);
+			path = "AIWorkout Collector WatchKit App";
+			sourceTree = "<group>";
+		};
+		488C22E42636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				488C230F2636FE0900EB72F2 /* MotionManager.swift */,
+				488C230B2636FD6800EB72F2 /* Views */,
+				488C22E52636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift */,
+				488C22E92636FD2700EB72F2 /* NotificationController.swift */,
+				488C22EB2636FD2700EB72F2 /* NotificationView.swift */,
+				488C22ED2636FD2700EB72F2 /* ComplicationController.swift */,
+				488C22EF2636FD2800EB72F2 /* Assets.xcassets */,
+				488C22F42636FD2800EB72F2 /* Info.plist */,
+				488C22F52636FD2800EB72F2 /* PushNotificationPayload.apns */,
+				488C22F12636FD2800EB72F2 /* Preview Content */,
+			);
+			path = "AIWorkout Collector WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		488C22F12636FD2800EB72F2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				488C22F22636FD2800EB72F2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		488C230B2636FD6800EB72F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				488C22E72636FD2700EB72F2 /* ContentView.swift */,
+				488C23062636FD6300EB72F2 /* DataCollectorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		488C22CF2636FD2400EB72F2 /* AIWorkout Collector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488C23002636FD2800EB72F2 /* Build configuration list for PBXNativeTarget "AIWorkout Collector" */;
+			buildPhases = (
+				488C22CE2636FD2400EB72F2 /* Resources */,
+				488C22FF2636FD2800EB72F2 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				488C22D72636FD2400EB72F2 /* PBXTargetDependency */,
+			);
+			name = "AIWorkout Collector";
+			packageProductDependencies = (
+			);
+			productName = "AIWorkout Collector Template";
+			productReference = 488C22D02636FD2400EB72F2 /* AIWorkout Collector.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		488C22D32636FD2400EB72F2 /* AIWorkout Collector WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488C22FC2636FD2800EB72F2 /* Build configuration list for PBXNativeTarget "AIWorkout Collector WatchKit App" */;
+			buildPhases = (
+				488C22D22636FD2400EB72F2 /* Resources */,
+				488C22FB2636FD2800EB72F2 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				488C22E32636FD2700EB72F2 /* PBXTargetDependency */,
+			);
+			name = "AIWorkout Collector WatchKit App";
+			productName = "AIWorkout Collector Template WatchKit App";
+			productReference = 488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		488C22DF2636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488C22F82636FD2800EB72F2 /* Build configuration list for PBXNativeTarget "AIWorkout Collector WatchKit Extension" */;
+			buildPhases = (
+				488C22DC2636FD2700EB72F2 /* Sources */,
+				488C22DD2636FD2700EB72F2 /* Frameworks */,
+				488C22DE2636FD2700EB72F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AIWorkout Collector WatchKit Extension";
+			productName = "AIWorkout Collector Template WatchKit Extension";
+			productReference = 488C22E02636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		488C22CA2636FD2300EB72F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					488C22CF2636FD2400EB72F2 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					488C22D32636FD2400EB72F2 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					488C22DF2636FD2700EB72F2 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 488C22CD2636FD2300EB72F2 /* Build configuration list for PBXProject "AIWorkout Collector" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 488C22C92636FD2300EB72F2;
+			packageReferences = (
+			);
+			productRefGroup = 488C22D12636FD2400EB72F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				488C22CF2636FD2400EB72F2 /* AIWorkout Collector */,
+				488C22D32636FD2400EB72F2 /* AIWorkout Collector WatchKit App */,
+				488C22DF2636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		488C22CE2636FD2400EB72F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488C22D22636FD2400EB72F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488C22DA2636FD2700EB72F2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488C22DE2636FD2700EB72F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488C22F32636FD2800EB72F2 /* Preview Assets.xcassets in Resources */,
+				488C22F02636FD2800EB72F2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		488C22DC2636FD2700EB72F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488C22EA2636FD2700EB72F2 /* NotificationController.swift in Sources */,
+				488C23102636FE0900EB72F2 /* MotionManager.swift in Sources */,
+				488C22E82636FD2700EB72F2 /* ContentView.swift in Sources */,
+				488C22EE2636FD2700EB72F2 /* ComplicationController.swift in Sources */,
+				488C22E62636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift in Sources */,
+				488C23072636FD6300EB72F2 /* DataCollectorView.swift in Sources */,
+				488C22EC2636FD2700EB72F2 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		488C22D72636FD2400EB72F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488C22D32636FD2400EB72F2 /* AIWorkout Collector WatchKit App */;
+			targetProxy = 488C22D62636FD2400EB72F2 /* PBXContainerItemProxy */;
+		};
+		488C22E32636FD2700EB72F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488C22DF2636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension */;
+			targetProxy = 488C22E22636FD2700EB72F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		488C22F62636FD2800EB72F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		488C22F72636FD2800EB72F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		488C22F92636FD2800EB72F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"AIWorkout Collector WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "AIWorkout Collector WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dks.AIWorkoutCollector.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		488C22FA2636FD2800EB72F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"AIWorkout Collector WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "AIWorkout Collector WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dks.AIWorkoutCollector.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		488C22FD2636FD2800EB72F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				IBSC_MODULE = AIWorkout_Collector_Template_WatchKit_Extension;
+				INFOPLIST_FILE = "AIWorkout Collector WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dks.AIWorkoutCollector.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		488C22FE2636FD2800EB72F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				IBSC_MODULE = AIWorkout_Collector_Template_WatchKit_Extension;
+				INFOPLIST_FILE = "AIWorkout Collector WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dks.AIWorkoutCollector.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		488C23012636FD2800EB72F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dks.AIWorkoutCollector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		488C23022636FD2800EB72F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dks.AIWorkoutCollector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		488C22CD2636FD2300EB72F2 /* Build configuration list for PBXProject "AIWorkout Collector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488C22F62636FD2800EB72F2 /* Debug */,
+				488C22F72636FD2800EB72F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488C22F82636FD2800EB72F2 /* Build configuration list for PBXNativeTarget "AIWorkout Collector WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488C22F92636FD2800EB72F2 /* Debug */,
+				488C22FA2636FD2800EB72F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488C22FC2636FD2800EB72F2 /* Build configuration list for PBXNativeTarget "AIWorkout Collector WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488C22FD2636FD2800EB72F2 /* Debug */,
+				488C22FE2636FD2800EB72F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488C23002636FD2800EB72F2 /* Build configuration list for PBXNativeTarget "AIWorkout Collector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488C23012636FD2800EB72F2 /* Debug */,
+				488C23022636FD2800EB72F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 488C22CA2636FD2300EB72F2 /* Project object */;
+}
