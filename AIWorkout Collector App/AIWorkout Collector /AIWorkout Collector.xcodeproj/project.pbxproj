@@ -17,8 +17,8 @@
 		488C22EE2636FD2700EB72F2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22ED2636FD2700EB72F2 /* ComplicationController.swift */; };
 		488C22F02636FD2800EB72F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22EF2636FD2800EB72F2 /* Assets.xcassets */; };
 		488C22F32636FD2800EB72F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22F22636FD2800EB72F2 /* Preview Assets.xcassets */; };
-		488C23072636FD6300EB72F2 /* DataCollectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C23062636FD6300EB72F2 /* DataCollectorView.swift */; };
-		488C23102636FE0900EB72F2 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C230F2636FE0900EB72F2 /* MotionManager.swift */; };
+		48BF84B2264655DE00CA7AB4 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B1264655DE00CA7AB4 /* SessionView.swift */; };
+		48BF84B42646608E00CA7AB4 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B32646608E00CA7AB4 /* MotionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +78,8 @@
 		488C22F22636FD2800EB72F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		488C22F42636FD2800EB72F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488C22F52636FD2800EB72F2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		488C23062636FD6300EB72F2 /* DataCollectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCollectorView.swift; sourceTree = "<group>"; };
-		488C230F2636FE0900EB72F2 /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionManager.swift; path = "../../QuickWorkout Collector/AIWorkout Collector WatchKit Extension/MotionManager.swift"; sourceTree = "<group>"; };
+		48BF84B1264655DE00CA7AB4 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		48BF84B32646608E00CA7AB4 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,7 @@
 		488C22E42636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				488C230F2636FE0900EB72F2 /* MotionManager.swift */,
+				48BF84B32646608E00CA7AB4 /* MotionManager.swift */,
 				488C230B2636FD6800EB72F2 /* Views */,
 				488C22E52636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift */,
 				488C22E92636FD2700EB72F2 /* NotificationController.swift */,
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				488C22E72636FD2700EB72F2 /* ContentView.swift */,
-				488C23062636FD6300EB72F2 /* DataCollectorView.swift */,
+				48BF84B1264655DE00CA7AB4 /* SessionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,11 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				488C22EA2636FD2700EB72F2 /* NotificationController.swift in Sources */,
-				488C23102636FE0900EB72F2 /* MotionManager.swift in Sources */,
+				48BF84B42646608E00CA7AB4 /* MotionManager.swift in Sources */,
+				48BF84B2264655DE00CA7AB4 /* SessionView.swift in Sources */,
 				488C22E82636FD2700EB72F2 /* ContentView.swift in Sources */,
 				488C22EE2636FD2700EB72F2 /* ComplicationController.swift in Sources */,
 				488C22E62636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift in Sources */,
-				488C23072636FD6300EB72F2 /* DataCollectorView.swift in Sources */,
 				488C22EC2636FD2700EB72F2 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
