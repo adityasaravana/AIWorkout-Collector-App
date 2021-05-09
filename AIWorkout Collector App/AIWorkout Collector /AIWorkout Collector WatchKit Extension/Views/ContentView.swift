@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  AIWorkout Collector Template WatchKit Extension
+//  AIWorkout Collector WatchKit Extension
 //
 //  Created by Aditya Saravana on 4/26/21.
 //
@@ -8,30 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var sheetIsPresented = false
-    @State var buttonSize = CGFloat(110)
     var body: some View {
-        
         VStack {
-            Button {
-                sheetIsPresented = true
-            } label: {
-                ZStack {
-                    Circle()
-                        .frame(width: buttonSize + 10, height: buttonSize + 10)
-                        .foregroundColor(Color.gray)
-                    
-                    
-                    Circle()
-                        .frame(width: buttonSize, height: buttonSize)
-                        .foregroundColor(Color("SkyBlue"))
-                    Image(systemName: "hammer.fill")
-                        .font(.system(size: 40))
-                }.padding(.all, 50)
-            }
-            .buttonStyle(PlainButtonStyle())
-            .sheet(isPresented: $sheetIsPresented) {
-                SessionView()
+            HStack {
+                LinkButton(actionType: .jump, systemName: "arrow.up")
+                
+                LinkButton(actionType: .dodgeRight, systemName: "arrow.right")
+            }.padding(.top)
+            HStack {
+                LinkButton(actionType: .dodgeLeft, systemName: "arrow.left")
+                
+                LinkButton(actionType: .duck, systemName: "arrow.down")
             }
         }
     }
@@ -41,7 +28,19 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
+            CircleLinkView(systemName: "arrow.left")
         }
     }
 }
 
+struct LinkButton: View {
+    var actionType: ActionType
+    var systemName: String
+    var body: some View {
+        NavigationLink(
+            destination: StartView(actionType: actionType),
+            label: {
+                CircleLinkView(systemName: systemName)
+            }).buttonStyle(PlainButtonStyle())
+    }
+}

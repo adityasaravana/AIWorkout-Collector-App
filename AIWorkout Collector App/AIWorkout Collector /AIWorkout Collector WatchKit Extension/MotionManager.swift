@@ -19,7 +19,6 @@ final class MotionManager: ObservableObject {
     @Published var deviceMotionData: [[Double]] = []
     
     @Published var mostRecentSession = Date()
-    
 }
 
 
@@ -98,7 +97,8 @@ extension MotionManager {
         
     }
     
-    func upload(fileName: URL) {
+    func upload(fileName: URL, actionType: ActionType) {
+        #warning("Add content")
         //Upload
     }
     
@@ -126,111 +126,87 @@ public extension FileManager {
 
 import SwiftUI
 
-extension MotionManager {
-    struct StartButton: View {
-        @Binding var testingPhase: TestingPhase
-        let motionManager = MotionManager()
-        var body: some View {
-            Button {
-                motionManager.start()
-                testingPhase = .inProgress
-            } label: {
-                ZStack {
-                    Circle()
-                        .frame(width: 120, height: 120)
-                        .foregroundColor(Color.gray)
-                    Circle()
-                        .frame(width: 110, height: 110)
-                        .foregroundColor(.green)
-                    Image(systemName: "play.fill")
-                        .font(.system(size: 40))
-                }.padding(.all, 50)
-            }.buttonStyle(PlainButtonStyle())
-        }
+
+struct StartButton: View {
+    @Binding var testingPhase: TestingPhase
+    let motionManager = MotionManager()
+    var body: some View {
+        Button {
+            motionManager.start()
+            testingPhase = .inProgress
+        } label: {
+            ActionCircleView(systemName: "play.fill", color: .green)
+        }.buttonStyle(PlainButtonStyle())
     }
+}
+
+struct RecordButton: View {
+    @Binding var testingPhase: TestingPhase
+    let motionManager = MotionManager()
+    var body: some View {
+        Button {
+            testingPhase = .recordingInProgress
+        } label: {
+            ActionCircleView(systemName: "video.fill", color: .red)
+        }.buttonStyle(PlainButtonStyle())
+    }
+}
+
+struct StopButton: View {
+    @Binding var testingPhase: TestingPhase
+    let motionManager = MotionManager()
+    var body: some View {
+        Button {
+            //                motionManager.stop()
+            testingPhase = .uploading
+        } label: {
+            ActionCircleView(systemName: "pause.fill", color: .orange)
+        }.buttonStyle(PlainButtonStyle())
+    }
+}
+
+struct UploadButton: View {
+    @Binding var testingPhase: TestingPhase
+    let motionManager = MotionManager()
     
-    struct RecordButton: View {
-        @Binding var testingPhase: TestingPhase
-        let motionManager = MotionManager()
-        var body: some View {
-            Button {
-                testingPhase = .recordingInProgress
-            } label: {
-                ZStack {
-                    Circle()
-                        .frame(width: 120, height: 120)
-                        .foregroundColor(Color.gray)
-                    Circle()
-                        .frame(width: 110, height: 110)
-                        .foregroundColor(.red)
-                    Image(systemName: "video.fill")
-                        .font(.system(size: 40))
-                }.padding(.all, 50)
-            }.buttonStyle(PlainButtonStyle())
-        }
+    var actionType: ActionType
+    var body: some View {
+        Button {
+            #warning("Add an actual filename")
+            motionManager.upload(fileName: URL(string: "")!, actionType: actionType)
+            testingPhase = .finished
+        } label: {
+            ActionCircleView(systemName: "icloud.and.arrow.up.fill", color: .blue)
+        }.buttonStyle(PlainButtonStyle())
     }
-    
-    struct StopButton: View {
-        @Binding var testingPhase: TestingPhase
-        let motionManager = MotionManager()
-        var body: some View {
-            Button {
-                testingPhase = .uploading
-//                motionManager.stop()
-            } label: {
-                ZStack {
-                    Circle()
-                        .frame(width: 120, height: 120)
-                        .foregroundColor(Color.gray)
-                    Circle()
-                        .frame(width: 110, height: 110)
-                        .foregroundColor(.orange)
-                    Image(systemName: "pause.fill")
-                        .font(.system(size: 40))
-                }.padding(.all, 50)
-            }.buttonStyle(PlainButtonStyle())
-        }
+}
+
+struct FinishButton: View {
+    @Binding var testingPhase: TestingPhase
+    @Environment(\.presentationMode) var presentationMode
+    var body: some View {
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            ActionCircleView(systemName: "checkmark", color: .green)
+        }.buttonStyle(PlainButtonStyle())
     }
-    
-    struct UploadButton: View {
-        @Binding var testingPhase: TestingPhase
-        let motionManager = MotionManager()
-        var body: some View {
-            Button {
-                testingPhase = .finished
-            } label: {
-                ZStack {
-                    Circle()
-                        .frame(width: 120, height: 120)
-                        .foregroundColor(Color.gray)
-                    Circle()
-                        .frame(width: 110, height: 110)
-                        .foregroundColor(.blue)
-                    Image(systemName: "icloud.and.arrow.up.fill")
-                        .font(.system(size: 40))
-                }.padding(.all, 50)
-            }.buttonStyle(PlainButtonStyle())
-        }
-    }
-    
-    struct FinishButton: View {
-        @Binding var testingPhase: TestingPhase
-        @Environment(\.presentationMode) var presentationMode
-        var body: some View {
-            Button {
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                ZStack {
-                    Circle()
-                        .frame(width: 120, height: 120)
-                        .foregroundColor(Color.gray)
-                    Circle()
-                        .frame(width: 110, height: 110)
-                        .foregroundColor(.green)
-                    Image(systemName: "checkmark")
-                        .font(.system(size: 40))
-                }.padding(.all, 50)
-            }.buttonStyle(PlainButtonStyle())
-        }
-    }
+}
+
+
+// MARK: - Enumurations
+
+enum TestingPhase {
+    case notStarted
+    case inProgress
+    case recordingInProgress
+    case uploading
+    case finished
+}
+
+enum ActionType {
+    case jump
+    case duck
+    case dodgeRight
+    case dodgeLeft
 }

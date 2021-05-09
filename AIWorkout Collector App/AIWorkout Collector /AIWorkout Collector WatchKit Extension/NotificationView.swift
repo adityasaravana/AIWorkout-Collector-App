@@ -1,6 +1,6 @@
 //
 //  NotificationView.swift
-//  AIWorkout Collector Template WatchKit Extension
+//  AIWorkout Collector WatchKit Extension
 //
 //  Created by Aditya Saravana on 4/26/21.
 //

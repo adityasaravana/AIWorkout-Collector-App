@@ -7,35 +7,29 @@
 
 import SwiftUI
 
-enum TestingPhase {
-    case notStarted
-    case inProgress
-    case recordingInProgress
-    case uploading
-    case finished
-}
 
 struct SessionView: View {
-    
-    
     @State var currentTestingPhase = TestingPhase.notStarted
+    
+    var actionType: ActionType
+    
     var body: some View {
         if currentTestingPhase == .notStarted {
-            MotionManager.StartButton(testingPhase: $currentTestingPhase)
+            StartButton(testingPhase: $currentTestingPhase)
         } else if currentTestingPhase == .inProgress {
-            MotionManager.RecordButton(testingPhase: $currentTestingPhase)
+            RecordButton(testingPhase: $currentTestingPhase)
         } else if currentTestingPhase == .recordingInProgress {
-            MotionManager.StopButton(testingPhase: $currentTestingPhase)
+            StopButton(testingPhase: $currentTestingPhase)
         } else if currentTestingPhase == .uploading {
-            MotionManager.UploadButton(testingPhase: $currentTestingPhase)
+            UploadButton(testingPhase: $currentTestingPhase, actionType: actionType)
         } else if currentTestingPhase == .finished {
-            MotionManager.FinishButton(testingPhase: $currentTestingPhase)
+            FinishButton(testingPhase: $currentTestingPhase)
         }
     }
 }
 
 struct SessionView_Previews: PreviewProvider {
     static var previews: some View {
-        SessionView()
+        SessionView(actionType: .dodgeLeft)
     }
 }

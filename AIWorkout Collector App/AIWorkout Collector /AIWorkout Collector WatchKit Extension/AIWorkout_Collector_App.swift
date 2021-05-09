@@ -1,6 +1,6 @@
 //
-//  AIWorkout_Collector_TemplateApp.swift
-//  AIWorkout Collector Template WatchKit Extension
+//  AIWorkout_Collector_App.swift
+//  AIWorkout Collector WatchKit Extension
 //
 //  Created by Aditya Saravana on 4/26/21.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct AIWorkout_Collector_TemplateApp: App {
+struct AIWorkout_Collector_App: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {

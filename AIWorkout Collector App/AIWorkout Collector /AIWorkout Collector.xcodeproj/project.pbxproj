@@ -10,7 +10,7 @@
 		488C22D52636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		488C22DA2636FD2700EB72F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22D92636FD2700EB72F2 /* Assets.xcassets */; };
 		488C22E12636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 488C22E02636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		488C22E62636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22E52636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift */; };
+		488C22E62636FD2700EB72F2 /* AIWorkout_Collector_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22E52636FD2700EB72F2 /* AIWorkout_Collector_App.swift */; };
 		488C22E82636FD2700EB72F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22E72636FD2700EB72F2 /* ContentView.swift */; };
 		488C22EA2636FD2700EB72F2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22E92636FD2700EB72F2 /* NotificationController.swift */; };
 		488C22EC2636FD2700EB72F2 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22EB2636FD2700EB72F2 /* NotificationView.swift */; };
@@ -19,6 +19,9 @@
 		488C22F32636FD2800EB72F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22F22636FD2800EB72F2 /* Preview Assets.xcassets */; };
 		48BF84B2264655DE00CA7AB4 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B1264655DE00CA7AB4 /* SessionView.swift */; };
 		48BF84B42646608E00CA7AB4 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B32646608E00CA7AB4 /* MotionManager.swift */; };
+		48BF84B62646F81400CA7AB4 /* ButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B52646F81400CA7AB4 /* ButtonViews.swift */; };
+		48BF84B82646FE5100CA7AB4 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B72646FE5100CA7AB4 /* StartView.swift */; };
+		48BF84BA264708DA00CA7AB4 /* ComplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B9264708DA00CA7AB4 /* ComplicationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +72,7 @@
 		488C22D92636FD2700EB72F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		488C22DB2636FD2700EB72F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488C22E02636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AIWorkout Collector WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		488C22E52636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIWorkout_Collector_TemplateApp.swift; sourceTree = "<group>"; };
+		488C22E52636FD2700EB72F2 /* AIWorkout_Collector_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIWorkout_Collector_App.swift; sourceTree = "<group>"; };
 		488C22E72636FD2700EB72F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		488C22E92636FD2700EB72F2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		488C22EB2636FD2700EB72F2 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -80,6 +83,9 @@
 		488C22F52636FD2800EB72F2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		48BF84B1264655DE00CA7AB4 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		48BF84B32646608E00CA7AB4 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		48BF84B52646F81400CA7AB4 /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
+		48BF84B72646FE5100CA7AB4 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		48BF84B9264708DA00CA7AB4 /* ComplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +132,11 @@
 			children = (
 				48BF84B32646608E00CA7AB4 /* MotionManager.swift */,
 				488C230B2636FD6800EB72F2 /* Views */,
-				488C22E52636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift */,
+				488C22E52636FD2700EB72F2 /* AIWorkout_Collector_App.swift */,
 				488C22E92636FD2700EB72F2 /* NotificationController.swift */,
 				488C22EB2636FD2700EB72F2 /* NotificationView.swift */,
 				488C22ED2636FD2700EB72F2 /* ComplicationController.swift */,
+				48BF84B9264708DA00CA7AB4 /* ComplicationsView.swift */,
 				488C22EF2636FD2800EB72F2 /* Assets.xcassets */,
 				488C22F42636FD2800EB72F2 /* Info.plist */,
 				488C22F52636FD2800EB72F2 /* PushNotificationPayload.apns */,
@@ -150,7 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				488C22E72636FD2700EB72F2 /* ContentView.swift */,
+				48BF84B72646FE5100CA7AB4 /* StartView.swift */,
 				48BF84B1264655DE00CA7AB4 /* SessionView.swift */,
+				48BF84B52646F81400CA7AB4 /* ButtonViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,12 +294,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48BF84B82646FE5100CA7AB4 /* StartView.swift in Sources */,
 				488C22EA2636FD2700EB72F2 /* NotificationController.swift in Sources */,
+				48BF84BA264708DA00CA7AB4 /* ComplicationsView.swift in Sources */,
 				48BF84B42646608E00CA7AB4 /* MotionManager.swift in Sources */,
 				48BF84B2264655DE00CA7AB4 /* SessionView.swift in Sources */,
 				488C22E82636FD2700EB72F2 /* ContentView.swift in Sources */,
 				488C22EE2636FD2700EB72F2 /* ComplicationController.swift in Sources */,
-				488C22E62636FD2700EB72F2 /* AIWorkout_Collector_TemplateApp.swift in Sources */,
+				48BF84B62646F81400CA7AB4 /* ButtonViews.swift in Sources */,
+				488C22E62636FD2700EB72F2 /* AIWorkout_Collector_App.swift in Sources */,
 				488C22EC2636FD2700EB72F2 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
