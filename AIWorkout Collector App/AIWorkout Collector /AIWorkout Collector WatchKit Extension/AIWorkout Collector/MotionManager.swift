@@ -13,7 +13,6 @@ import HealthKit
 
 // MARK: - MotionManager Class
 final class MotionManager: ObservableObject {
-    
     let motionManager = CMMotionManager()
     let serverManager = ServerManager()
     

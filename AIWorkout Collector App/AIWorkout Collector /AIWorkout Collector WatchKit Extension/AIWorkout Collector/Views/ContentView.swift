@@ -27,28 +27,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContentView()
-            CircleLinkView(systemName: "arrow.left")
-        }
+        ContentView()
     }
 }
 
-struct LinkButton: View {
-    @Binding var sheetIsPresented: Bool
-    
-    let actionType: ActionType
-    let systemName: String
-    
-    var body: some View {
-        Button {
-            sheetIsPresented = true
-        } label: {
-            CircleLinkView(systemName: systemName)
-        }
-        .buttonStyle(PlainButtonStyle())
-        .sheet(isPresented: $sheetIsPresented) {
-            SessionView(actionType: actionType)
-        }
-    }
-}

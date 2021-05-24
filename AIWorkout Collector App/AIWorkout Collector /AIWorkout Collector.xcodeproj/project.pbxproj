@@ -11,6 +11,7 @@
 		483B653B265B3AAD0036297D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B653A265B3AAD0036297D /* Extensions.swift */; };
 		483B6545265B3CB70036297D /* AIWorkout_Collector_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B6544265B3CB70036297D /* AIWorkout_Collector_Tests.swift */; };
 		483B6553265B3CC50036297D /* AIWorkout_Collector_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B6552265B3CC50036297D /* AIWorkout_Collector_UITests.swift */; };
+		483B655B265B3ECB0036297D /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B655A265B3ECB0036297D /* NotificationView.swift */; };
 		487F85112648E0B300736B20 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487F85102648E0B300736B20 /* ServerManager.swift */; };
 		488C22D52636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		488C22DA2636FD2700EB72F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22D92636FD2700EB72F2 /* Assets.xcassets */; };
@@ -18,7 +19,6 @@
 		488C22E62636FD2700EB72F2 /* AIWorkout_Collector_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22E52636FD2700EB72F2 /* AIWorkout_Collector_App.swift */; };
 		488C22E82636FD2700EB72F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22E72636FD2700EB72F2 /* ContentView.swift */; };
 		488C22EA2636FD2700EB72F2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22E92636FD2700EB72F2 /* NotificationController.swift */; };
-		488C22EC2636FD2700EB72F2 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22EB2636FD2700EB72F2 /* NotificationView.swift */; };
 		488C22EE2636FD2700EB72F2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C22ED2636FD2700EB72F2 /* ComplicationController.swift */; };
 		488C22F02636FD2800EB72F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22EF2636FD2800EB72F2 /* Assets.xcassets */; };
 		488C22F32636FD2800EB72F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22F22636FD2800EB72F2 /* Preview Assets.xcassets */; };
@@ -92,6 +92,7 @@
 		483B6550265B3CC50036297D /* AIWorkout Collector UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AIWorkout Collector UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		483B6552265B3CC50036297D /* AIWorkout_Collector_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIWorkout_Collector_UITests.swift; sourceTree = "<group>"; };
 		483B6554265B3CC50036297D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		483B655A265B3ECB0036297D /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		487F85102648E0B300736B20 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		488C22D02636FD2400EB72F2 /* AIWorkout Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AIWorkout Collector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AIWorkout Collector WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +102,6 @@
 		488C22E52636FD2700EB72F2 /* AIWorkout_Collector_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIWorkout_Collector_App.swift; sourceTree = "<group>"; };
 		488C22E72636FD2700EB72F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		488C22E92636FD2700EB72F2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		488C22EB2636FD2700EB72F2 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		488C22ED2636FD2700EB72F2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		488C22EF2636FD2800EB72F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		488C22F22636FD2800EB72F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				488C22E92636FD2700EB72F2 /* NotificationController.swift */,
-				488C22EB2636FD2700EB72F2 /* NotificationView.swift */,
+				483B655A265B3ECB0036297D /* NotificationView.swift */,
 				488C22ED2636FD2700EB72F2 /* ComplicationController.swift */,
 			);
 			path = "Notifications & Complications";
@@ -450,13 +450,13 @@
 				488C22EA2636FD2700EB72F2 /* NotificationController.swift in Sources */,
 				483B6539265B3A730036297D /* HealthKitManager.swift in Sources */,
 				48BF84B42646608E00CA7AB4 /* MotionManager.swift in Sources */,
+				483B655B265B3ECB0036297D /* NotificationView.swift in Sources */,
 				48BF84B2264655DE00CA7AB4 /* SessionView.swift in Sources */,
 				488C22E82636FD2700EB72F2 /* ContentView.swift in Sources */,
 				488C22EE2636FD2700EB72F2 /* ComplicationController.swift in Sources */,
 				48BF84B62646F81400CA7AB4 /* ButtonViews.swift in Sources */,
 				483B653B265B3AAD0036297D /* Extensions.swift in Sources */,
 				488C22E62636FD2700EB72F2 /* AIWorkout_Collector_App.swift in Sources */,
-				488C22EC2636FD2700EB72F2 /* NotificationView.swift in Sources */,
 				487F85112648E0B300736B20 /* ServerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

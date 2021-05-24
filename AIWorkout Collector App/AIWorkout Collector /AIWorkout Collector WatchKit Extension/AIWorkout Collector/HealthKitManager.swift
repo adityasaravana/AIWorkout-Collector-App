@@ -31,21 +31,21 @@ class HealthKitManager {
         }
     }
     
-//    func startWorkoutWithHealthStore() -> HKWorkoutSession {
-//        let configuration = HKWorkoutConfiguration()
-//        configuration.activityType = HKWorkoutActivityType.highIntensityIntervalTraining
-//
-//        let session : HKWorkoutSession
-//        do {
-//            session = try HKWorkoutSession(healthStore: healthStore, configuration: configuration)
-//        } catch let error {
-//            // let the user know about the error
-//            return
-//        }
-//
-//
-//        return session
-//    }
+    //    func startWorkoutWithHealthStore() -> HKWorkoutSession {
+    //        let configuration = HKWorkoutConfiguration()
+    //        configuration.activityType = HKWorkoutActivityType.highIntensityIntervalTraining
+    //
+    //        let session : HKWorkoutSession
+    //        do {
+    //            session = try HKWorkoutSession(healthStore: healthStore, configuration: configuration)
+    //        } catch let error {
+    //            // let the user know about the error
+    //            return
+    //        }
+    //
+    //
+    //        return session
+    //    }
     
     func stop() {
         
