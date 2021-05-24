@@ -9,16 +9,21 @@
 import Foundation
 import CoreMotion
 import Combine
+import HealthKit
 
 // MARK: - MotionManager Class
 final class MotionManager: ObservableObject {
+    
     let motionManager = CMMotionManager()
+    let serverManager = ServerManager()
     
     @Published var accelerometerData: [[Double]] = []
     @Published var gyroData: [[Double]] = []
     @Published var deviceMotionData: [[Double]] = []
     
     @Published var mostRecentSession = Date()
+    
+    @Published var fileName = ""
 }
 
 
@@ -56,6 +61,7 @@ extension MotionManager {
                 let timeStamp = Double((Date().timeIntervalSince1970) * 1000)
                 
                 self.gyroData.append([data.rotationRate.x, data.rotationRate.y, data.rotationRate.z, timeStamp])
+                
                 print(data)
             }
         }
@@ -75,20 +81,21 @@ extension MotionManager {
     }
     
     
-    func save() {
+    func save(actionType: ActionType) {
+        let fileLabel = "\(actionType)".uppercased()
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
         
-        let motionData: [[[Double]]: String] = [
-            accelerometerData: "AccelerometerData",
-            gyroData: "GyroData",
-            deviceMotionData: "DeviceMotionData",
-            
+        let motionData: [String : [[Double]]] = [
+            "AccelerometerData": accelerometerData,
+            "GyroData": gyroData,
+            "DeviceMotionData": deviceMotionData
         ]
         
         do {
             let sessionID = UUID().uuidString
-            let plistURL = URL(fileURLWithPath: "MotionData-\(sessionID)", relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("plist")
+            let plistURL = URL(fileURLWithPath: "MotionData-\(sessionID)-\(fileLabel)", relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("plist")
+            fileName = "MotionData-\(sessionID)-\(fileLabel)"
             let data = try encoder.encode(motionData)
             try data.write(to: plistURL, options: .atomicWrite)
         } catch let error {
@@ -97,16 +104,16 @@ extension MotionManager {
         
     }
     
-    func upload(fileName: URL, actionType: ActionType) {
-        #warning("Add content")
-        //Upload
+    func upload() {
+        serverManager.sendPostRequest(fileName: fileName)
     }
     
-    func stop() {
+    func stop(actionType: ActionType) {
         motionManager.stopAccelerometerUpdates()
         motionManager.stopGyroUpdates()
         motionManager.stopDeviceMotionUpdates()
-        save()
+        save(actionType: actionType)
+        upload()
         accelerometerData = []
         gyroData = []
         deviceMotionData = []
@@ -121,86 +128,12 @@ public extension FileManager {
     }
 }
 
-
-// MARK: - MotionManager Buttons
-
-import SwiftUI
-
-
-struct StartButton: View {
-    @Binding var testingPhase: TestingPhase
-    let motionManager = MotionManager()
-    var body: some View {
-        Button {
-            motionManager.start()
-            testingPhase = .inProgress
-        } label: {
-            ActionCircleView(systemName: "play.fill", color: .green)
-        }.buttonStyle(PlainButtonStyle())
-    }
-}
-
-struct RecordButton: View {
-    @Binding var testingPhase: TestingPhase
-    let motionManager = MotionManager()
-    var body: some View {
-        Button {
-            testingPhase = .recordingInProgress
-        } label: {
-            ActionCircleView(systemName: "video.fill", color: .red)
-        }.buttonStyle(PlainButtonStyle())
-    }
-}
-
-struct StopButton: View {
-    @Binding var testingPhase: TestingPhase
-    let motionManager = MotionManager()
-    var body: some View {
-        Button {
-            //                motionManager.stop()
-            testingPhase = .uploading
-        } label: {
-            ActionCircleView(systemName: "pause.fill", color: .orange)
-        }.buttonStyle(PlainButtonStyle())
-    }
-}
-
-struct UploadButton: View {
-    @Binding var testingPhase: TestingPhase
-    let motionManager = MotionManager()
-    
-    var actionType: ActionType
-    var body: some View {
-        Button {
-            #warning("Add an actual filename")
-            motionManager.upload(fileName: URL(string: "")!, actionType: actionType)
-            testingPhase = .finished
-        } label: {
-            ActionCircleView(systemName: "icloud.and.arrow.up.fill", color: .blue)
-        }.buttonStyle(PlainButtonStyle())
-    }
-}
-
-struct FinishButton: View {
-    @Binding var testingPhase: TestingPhase
-    @Environment(\.presentationMode) var presentationMode
-    var body: some View {
-        Button {
-            presentationMode.wrappedValue.dismiss()
-        } label: {
-            ActionCircleView(systemName: "checkmark", color: .green)
-        }.buttonStyle(PlainButtonStyle())
-    }
-}
-
-
 // MARK: - Enumurations
 
 enum TestingPhase {
     case notStarted
     case inProgress
     case recordingInProgress
-    case uploading
     case finished
 }
 
@@ -210,3 +143,56 @@ enum ActionType {
     case dodgeRight
     case dodgeLeft
 }
+
+// MARK: - HealthKit
+
+class HealthKitManager {
+    let healthStore = HKHealthStore()
+    
+    
+    
+    func request() {
+        if HKHealthStore.isHealthDataAvailable() {
+            let heartRateQuantityType = HKObjectType.quantityType(forIdentifier: .heartRate)!
+            let allTypes = Set([HKObjectType.workoutType(),
+                                heartRateQuantityType
+            ])
+            healthStore.requestAuthorization(toShare: nil, read: allTypes) { (result, error) in
+                if let error = error {
+                    // deal with the error
+                    print(error.localizedDescription)
+                    return
+                }
+                guard result else {
+                    // deal with the failed request
+                    return
+                }
+                // begin any necessary work if needed
+            }
+        }
+    }
+    
+    
+    
+//    func startWorkoutWithHealthStore() -> HKWorkoutSession {
+//        let configuration = HKWorkoutConfiguration()
+//        configuration.activityType = HKWorkoutActivityType.highIntensityIntervalTraining
+//        
+//        let session : HKWorkoutSession
+//        do {
+//            session = try HKWorkoutSession(healthStore: healthStore, configuration: configuration)
+//        } catch let error {
+//            // let the user know about the error
+//            return
+//        }
+//        
+//        
+//        return session
+//    }
+    
+    func stop() {
+        
+    }
+}
+
+

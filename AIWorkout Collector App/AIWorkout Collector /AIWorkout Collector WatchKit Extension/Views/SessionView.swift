@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-
 struct SessionView: View {
     @State var currentTestingPhase = TestingPhase.notStarted
     
-    var actionType: ActionType
+    let actionType: ActionType
     
     var body: some View {
         if currentTestingPhase == .notStarted {
@@ -19,12 +18,8 @@ struct SessionView: View {
         } else if currentTestingPhase == .inProgress {
             RecordButton(testingPhase: $currentTestingPhase)
         } else if currentTestingPhase == .recordingInProgress {
-            StopButton(testingPhase: $currentTestingPhase)
-        } else if currentTestingPhase == .uploading {
-            UploadButton(testingPhase: $currentTestingPhase, actionType: actionType)
-        } else if currentTestingPhase == .finished {
-            FinishButton(testingPhase: $currentTestingPhase)
-        }
+            FinishButton(testingPhase: $currentTestingPhase, actionType: actionType)
+        } 
     }
 }
 

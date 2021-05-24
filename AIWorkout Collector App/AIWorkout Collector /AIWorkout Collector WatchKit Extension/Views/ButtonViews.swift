@@ -8,25 +8,32 @@
 import SwiftUI
 
 struct ActionCircleView: View {
-    var systemName: String
-    var color: Color
+    let label: String
+    let systemName: String
+    let color: Color
     var body: some View {
-        ZStack {
-            Circle()
-                .frame(width: 120, height: 120)
-                .foregroundColor(Color.gray)
-            
-            Circle()
-                .frame(width: 110, height: 110)
-                .foregroundColor(color)
-            Image(systemName: systemName)
-                .font(.system(size: 40))
-        }.padding(.all, 50)
+        VStack {
+            ZStack {
+                Circle()
+                    .frame(width: 120, height: 120)
+                    .foregroundColor(Color.gray)
+                
+                Circle()
+                    .frame(width: 110, height: 110)
+                    .foregroundColor(color)
+                Image(systemName: systemName)
+                    .font(.system(size: 40))
+            }.padding([.top, .leading, .trailing], 50)
+            Text(label)
+                .foregroundColor(.white)
+                .font(.caption)
+                .padding(.bottom, 50)
+        }
     }
 }
 
 struct CircleLinkView: View {
-    var systemName: String
+    let systemName: String
     var body: some View {
         ZStack {
             Circle()
@@ -41,8 +48,7 @@ struct CircleLinkView: View {
 
 struct ButtonViews_Previews: PreviewProvider {
     static var previews: some View {
-        ActionCircleView(systemName: "hammer.fill", color: .blue)
-        ActionCircleView(systemName: "video.fill", color: .red)
+        CircleLinkView(systemName: "hammer")
     }
 }
 

@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var sheetIsPresented = false
     var body: some View {
         VStack {
             HStack {
-                LinkButton(actionType: .jump, systemName: "arrow.up")
+                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .jump, systemName: "arrow.up")
                 
-                LinkButton(actionType: .dodgeRight, systemName: "arrow.right")
-            }.padding(.top)
+                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .dodgeRight, systemName: "arrow.right")
+            }.padding(.top, 20)
             HStack {
-                LinkButton(actionType: .dodgeLeft, systemName: "arrow.left")
+                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .dodgeLeft, systemName: "arrow.left")
                 
-                LinkButton(actionType: .duck, systemName: "arrow.down")
+                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .duck, systemName: "arrow.down")
             }
         }
     }
@@ -34,13 +35,20 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct LinkButton: View {
-    var actionType: ActionType
-    var systemName: String
+    @Binding var sheetIsPresented: Bool
+    
+    let actionType: ActionType
+    let systemName: String
+    
     var body: some View {
-        NavigationLink(
-            destination: StartView(actionType: actionType),
-            label: {
-                CircleLinkView(systemName: systemName)
-            }).buttonStyle(PlainButtonStyle())
+        Button {
+            sheetIsPresented = true
+        } label: {
+            CircleLinkView(systemName: systemName)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .sheet(isPresented: $sheetIsPresented) {
+            SessionView(actionType: actionType)
+        }
     }
 }

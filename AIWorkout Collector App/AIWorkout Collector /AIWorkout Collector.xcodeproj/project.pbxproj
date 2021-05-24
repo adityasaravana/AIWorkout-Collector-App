@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48784B5126574CC500201FEB /* MotionManagerButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48784B5026574CC500201FEB /* MotionManagerButtons.swift */; };
+		487F85112648E0B300736B20 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487F85102648E0B300736B20 /* ServerManager.swift */; };
 		488C22D52636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		488C22DA2636FD2700EB72F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22D92636FD2700EB72F2 /* Assets.xcassets */; };
 		488C22E12636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 488C22E02636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -20,7 +22,6 @@
 		48BF84B2264655DE00CA7AB4 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B1264655DE00CA7AB4 /* SessionView.swift */; };
 		48BF84B42646608E00CA7AB4 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B32646608E00CA7AB4 /* MotionManager.swift */; };
 		48BF84B62646F81400CA7AB4 /* ButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B52646F81400CA7AB4 /* ButtonViews.swift */; };
-		48BF84B82646FE5100CA7AB4 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B72646FE5100CA7AB4 /* StartView.swift */; };
 		48BF84BA264708DA00CA7AB4 /* ComplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B9264708DA00CA7AB4 /* ComplicationsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		48784B5026574CC500201FEB /* MotionManagerButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManagerButtons.swift; sourceTree = "<group>"; };
+		487F85102648E0B300736B20 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		488C22D02636FD2400EB72F2 /* AIWorkout Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AIWorkout Collector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AIWorkout Collector WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		488C22D92636FD2700EB72F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +87,6 @@
 		48BF84B1264655DE00CA7AB4 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		48BF84B32646608E00CA7AB4 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		48BF84B52646F81400CA7AB4 /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
-		48BF84B72646FE5100CA7AB4 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		48BF84B9264708DA00CA7AB4 /* ComplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 		488C22E42636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				487F85102648E0B300736B20 /* ServerManager.swift */,
 				48BF84B32646608E00CA7AB4 /* MotionManager.swift */,
 				488C230B2636FD6800EB72F2 /* Views */,
 				488C22E52636FD2700EB72F2 /* AIWorkout_Collector_App.swift */,
@@ -157,9 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				488C22E72636FD2700EB72F2 /* ContentView.swift */,
-				48BF84B72646FE5100CA7AB4 /* StartView.swift */,
 				48BF84B1264655DE00CA7AB4 /* SessionView.swift */,
 				48BF84B52646F81400CA7AB4 /* ButtonViews.swift */,
+				48784B5026574CC500201FEB /* MotionManagerButtons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,7 +297,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48BF84B82646FE5100CA7AB4 /* StartView.swift in Sources */,
 				488C22EA2636FD2700EB72F2 /* NotificationController.swift in Sources */,
 				48BF84BA264708DA00CA7AB4 /* ComplicationsView.swift in Sources */,
 				48BF84B42646608E00CA7AB4 /* MotionManager.swift in Sources */,
@@ -304,6 +306,8 @@
 				48BF84B62646F81400CA7AB4 /* ButtonViews.swift in Sources */,
 				488C22E62636FD2700EB72F2 /* AIWorkout_Collector_App.swift in Sources */,
 				488C22EC2636FD2700EB72F2 /* NotificationView.swift in Sources */,
+				487F85112648E0B300736B20 /* ServerManager.swift in Sources */,
+				48784B5126574CC500201FEB /* MotionManagerButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +461,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Debug;
 		};
@@ -481,7 +485,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Release;
 		};
@@ -501,7 +505,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Debug;
 		};
@@ -521,7 +525,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Release;
 		};
