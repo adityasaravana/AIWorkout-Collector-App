@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		483B6539265B3A730036297D /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B6538265B3A730036297D /* HealthKitManager.swift */; };
 		483B653B265B3AAD0036297D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B653A265B3AAD0036297D /* Extensions.swift */; };
+		483B6545265B3CB70036297D /* AIWorkout_Collector_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B6544265B3CB70036297D /* AIWorkout_Collector_Tests.swift */; };
+		483B6553265B3CC50036297D /* AIWorkout_Collector_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B6552265B3CC50036297D /* AIWorkout_Collector_UITests.swift */; };
 		487F85112648E0B300736B20 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487F85102648E0B300736B20 /* ServerManager.swift */; };
 		488C22D52636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		488C22DA2636FD2700EB72F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22D92636FD2700EB72F2 /* Assets.xcassets */; };
@@ -26,6 +28,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		483B6547265B3CB70036297D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 488C22CA2636FD2300EB72F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488C22DF2636FD2700EB72F2;
+			remoteInfo = "AIWorkout Collector WatchKit Extension";
+		};
+		483B6555265B3CC50036297D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 488C22CA2636FD2300EB72F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488C22D32636FD2400EB72F2;
+			remoteInfo = "AIWorkout Collector WatchKit App";
+		};
 		488C22D62636FD2400EB72F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 488C22CA2636FD2300EB72F2 /* Project object */;
@@ -70,6 +86,12 @@
 /* Begin PBXFileReference section */
 		483B6538265B3A730036297D /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		483B653A265B3AAD0036297D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		483B6542265B3CB70036297D /* AIWorkout Collector Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AIWorkout Collector Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		483B6544265B3CB70036297D /* AIWorkout_Collector_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIWorkout_Collector_Tests.swift; sourceTree = "<group>"; };
+		483B6546265B3CB70036297D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		483B6550265B3CC50036297D /* AIWorkout Collector UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AIWorkout Collector UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		483B6552265B3CC50036297D /* AIWorkout_Collector_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIWorkout_Collector_UITests.swift; sourceTree = "<group>"; };
+		483B6554265B3CC50036297D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		487F85102648E0B300736B20 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		488C22D02636FD2400EB72F2 /* AIWorkout Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AIWorkout Collector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AIWorkout Collector WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +113,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		483B653F265B3CB70036297D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		483B654D265B3CC50036297D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		488C22DD2636FD2700EB72F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,11 +158,31 @@
 			path = "AIWorkout Collector";
 			sourceTree = "<group>";
 		};
+		483B6543265B3CB70036297D /* AIWorkout Collector Tests */ = {
+			isa = PBXGroup;
+			children = (
+				483B6544265B3CB70036297D /* AIWorkout_Collector_Tests.swift */,
+				483B6546265B3CB70036297D /* Info.plist */,
+			);
+			path = "AIWorkout Collector Tests";
+			sourceTree = "<group>";
+		};
+		483B6551265B3CC50036297D /* AIWorkout Collector UITests */ = {
+			isa = PBXGroup;
+			children = (
+				483B6552265B3CC50036297D /* AIWorkout_Collector_UITests.swift */,
+				483B6554265B3CC50036297D /* Info.plist */,
+			);
+			path = "AIWorkout Collector UITests";
+			sourceTree = "<group>";
+		};
 		488C22C92636FD2300EB72F2 = {
 			isa = PBXGroup;
 			children = (
 				488C22D82636FD2400EB72F2 /* AIWorkout Collector WatchKit App */,
 				488C22E42636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension */,
+				483B6543265B3CB70036297D /* AIWorkout Collector Tests */,
+				483B6551265B3CC50036297D /* AIWorkout Collector UITests */,
 				488C22D12636FD2400EB72F2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,6 +193,8 @@
 				488C22D02636FD2400EB72F2 /* AIWorkout Collector.app */,
 				488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */,
 				488C22E02636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension.appex */,
+				483B6542265B3CB70036297D /* AIWorkout Collector Tests.xctest */,
+				483B6550265B3CC50036297D /* AIWorkout Collector UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +244,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		483B6541265B3CB70036297D /* AIWorkout Collector Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 483B6549265B3CB70036297D /* Build configuration list for PBXNativeTarget "AIWorkout Collector Tests" */;
+			buildPhases = (
+				483B653E265B3CB70036297D /* Sources */,
+				483B653F265B3CB70036297D /* Frameworks */,
+				483B6540265B3CB70036297D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				483B6548265B3CB70036297D /* PBXTargetDependency */,
+			);
+			name = "AIWorkout Collector Tests";
+			productName = "AIWorkout Collector Tests";
+			productReference = 483B6542265B3CB70036297D /* AIWorkout Collector Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		483B654F265B3CC50036297D /* AIWorkout Collector UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 483B6557265B3CC50036297D /* Build configuration list for PBXNativeTarget "AIWorkout Collector UITests" */;
+			buildPhases = (
+				483B654C265B3CC50036297D /* Sources */,
+				483B654D265B3CC50036297D /* Frameworks */,
+				483B654E265B3CC50036297D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				483B6556265B3CC50036297D /* PBXTargetDependency */,
+			);
+			name = "AIWorkout Collector UITests";
+			productName = "AIWorkout Collector UITests";
+			productReference = 483B6550265B3CC50036297D /* AIWorkout Collector UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		488C22CF2636FD2400EB72F2 /* AIWorkout Collector */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 488C23002636FD2800EB72F2 /* Build configuration list for PBXNativeTarget "AIWorkout Collector" */;
@@ -245,9 +339,17 @@
 		488C22CA2636FD2300EB72F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					483B6541265B3CB70036297D = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 488C22DF2636FD2700EB72F2;
+					};
+					483B654F265B3CC50036297D = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 488C22D32636FD2400EB72F2;
+					};
 					488C22CF2636FD2400EB72F2 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -277,11 +379,27 @@
 				488C22CF2636FD2400EB72F2 /* AIWorkout Collector */,
 				488C22D32636FD2400EB72F2 /* AIWorkout Collector WatchKit App */,
 				488C22DF2636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension */,
+				483B6541265B3CB70036297D /* AIWorkout Collector Tests */,
+				483B654F265B3CC50036297D /* AIWorkout Collector UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		483B6540265B3CB70036297D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		483B654E265B3CC50036297D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		488C22CE2636FD2400EB72F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,6 +427,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		483B653E265B3CB70036297D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				483B6545265B3CB70036297D /* AIWorkout_Collector_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		483B654C265B3CC50036297D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				483B6553265B3CC50036297D /* AIWorkout_Collector_UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		488C22DC2636FD2700EB72F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +464,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		483B6548265B3CB70036297D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488C22DF2636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension */;
+			targetProxy = 483B6547265B3CB70036297D /* PBXContainerItemProxy */;
+		};
+		483B6556265B3CC50036297D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488C22D32636FD2400EB72F2 /* AIWorkout Collector WatchKit App */;
+			targetProxy = 483B6555265B3CC50036297D /* PBXContainerItemProxy */;
+		};
 		488C22D72636FD2400EB72F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 488C22D32636FD2400EB72F2 /* AIWorkout Collector WatchKit App */;
@@ -343,6 +487,92 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		483B654A265B3CB70036297D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				INFOPLIST_FILE = "AIWorkout Collector Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DevKnight-Studios.AIWorkout-Collector-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIWorkout Collector WatchKit Extension.appex/AIWorkout Collector WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		483B654B265B3CB70036297D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				INFOPLIST_FILE = "AIWorkout Collector Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DevKnight-Studios.AIWorkout-Collector-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIWorkout Collector WatchKit Extension.appex/AIWorkout Collector WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		483B6558265B3CC50036297D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				INFOPLIST_FILE = "AIWorkout Collector UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DevKnight-Studios.AIWorkout-Collector-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "AIWorkout Collector WatchKit App";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		483B6559265B3CC50036297D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				INFOPLIST_FILE = "AIWorkout Collector UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DevKnight-Studios.AIWorkout-Collector-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "AIWorkout Collector WatchKit App";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
 		488C22F62636FD2800EB72F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -574,6 +804,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		483B6549265B3CB70036297D /* Build configuration list for PBXNativeTarget "AIWorkout Collector Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				483B654A265B3CB70036297D /* Debug */,
+				483B654B265B3CB70036297D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		483B6557265B3CC50036297D /* Build configuration list for PBXNativeTarget "AIWorkout Collector UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				483B6558265B3CC50036297D /* Debug */,
+				483B6559265B3CC50036297D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		488C22CD2636FD2300EB72F2 /* Build configuration list for PBXProject "AIWorkout Collector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
