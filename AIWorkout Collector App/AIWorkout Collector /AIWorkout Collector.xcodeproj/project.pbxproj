@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48784B5126574CC500201FEB /* MotionManagerButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48784B5026574CC500201FEB /* MotionManagerButtons.swift */; };
+		483B6539265B3A730036297D /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B6538265B3A730036297D /* HealthKitManager.swift */; };
+		483B653B265B3AAD0036297D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B653A265B3AAD0036297D /* Extensions.swift */; };
 		487F85112648E0B300736B20 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487F85102648E0B300736B20 /* ServerManager.swift */; };
 		488C22D52636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		488C22DA2636FD2700EB72F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C22D92636FD2700EB72F2 /* Assets.xcassets */; };
@@ -22,7 +23,6 @@
 		48BF84B2264655DE00CA7AB4 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B1264655DE00CA7AB4 /* SessionView.swift */; };
 		48BF84B42646608E00CA7AB4 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B32646608E00CA7AB4 /* MotionManager.swift */; };
 		48BF84B62646F81400CA7AB4 /* ButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B52646F81400CA7AB4 /* ButtonViews.swift */; };
-		48BF84BA264708DA00CA7AB4 /* ComplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF84B9264708DA00CA7AB4 /* ComplicationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		48784B5026574CC500201FEB /* MotionManagerButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManagerButtons.swift; sourceTree = "<group>"; };
+		483B6538265B3A730036297D /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		483B653A265B3AAD0036297D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		487F85102648E0B300736B20 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		488C22D02636FD2400EB72F2 /* AIWorkout Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AIWorkout Collector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		488C22D42636FD2400EB72F2 /* AIWorkout Collector WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AIWorkout Collector WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +88,6 @@
 		48BF84B1264655DE00CA7AB4 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		48BF84B32646608E00CA7AB4 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		48BF84B52646F81400CA7AB4 /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
-		48BF84B9264708DA00CA7AB4 /* ComplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +101,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		483B653C265B3B480036297D /* Notifications & Complications */ = {
+			isa = PBXGroup;
+			children = (
+				488C22E92636FD2700EB72F2 /* NotificationController.swift */,
+				488C22EB2636FD2700EB72F2 /* NotificationView.swift */,
+				488C22ED2636FD2700EB72F2 /* ComplicationController.swift */,
+			);
+			path = "Notifications & Complications";
+			sourceTree = "<group>";
+		};
+		483B653D265B3C0B0036297D /* AIWorkout Collector */ = {
+			isa = PBXGroup;
+			children = (
+				487F85102648E0B300736B20 /* ServerManager.swift */,
+				48BF84B32646608E00CA7AB4 /* MotionManager.swift */,
+				483B6538265B3A730036297D /* HealthKitManager.swift */,
+				488C230B2636FD6800EB72F2 /* Views */,
+			);
+			path = "AIWorkout Collector";
+			sourceTree = "<group>";
+		};
 		488C22C92636FD2300EB72F2 = {
 			isa = PBXGroup;
 			children = (
@@ -132,18 +153,14 @@
 		488C22E42636FD2700EB72F2 /* AIWorkout Collector WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				487F85102648E0B300736B20 /* ServerManager.swift */,
-				48BF84B32646608E00CA7AB4 /* MotionManager.swift */,
-				488C230B2636FD6800EB72F2 /* Views */,
+				483B653D265B3C0B0036297D /* AIWorkout Collector */,
 				488C22E52636FD2700EB72F2 /* AIWorkout_Collector_App.swift */,
-				488C22E92636FD2700EB72F2 /* NotificationController.swift */,
-				488C22EB2636FD2700EB72F2 /* NotificationView.swift */,
-				488C22ED2636FD2700EB72F2 /* ComplicationController.swift */,
-				48BF84B9264708DA00CA7AB4 /* ComplicationsView.swift */,
+				483B653A265B3AAD0036297D /* Extensions.swift */,
 				488C22EF2636FD2800EB72F2 /* Assets.xcassets */,
 				488C22F42636FD2800EB72F2 /* Info.plist */,
-				488C22F52636FD2800EB72F2 /* PushNotificationPayload.apns */,
+				483B653C265B3B480036297D /* Notifications & Complications */,
 				488C22F12636FD2800EB72F2 /* Preview Content */,
+				488C22F52636FD2800EB72F2 /* PushNotificationPayload.apns */,
 			);
 			path = "AIWorkout Collector WatchKit Extension";
 			sourceTree = "<group>";
@@ -162,7 +179,6 @@
 				488C22E72636FD2700EB72F2 /* ContentView.swift */,
 				48BF84B1264655DE00CA7AB4 /* SessionView.swift */,
 				48BF84B52646F81400CA7AB4 /* ButtonViews.swift */,
-				48784B5026574CC500201FEB /* MotionManagerButtons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,16 +314,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				488C22EA2636FD2700EB72F2 /* NotificationController.swift in Sources */,
-				48BF84BA264708DA00CA7AB4 /* ComplicationsView.swift in Sources */,
+				483B6539265B3A730036297D /* HealthKitManager.swift in Sources */,
 				48BF84B42646608E00CA7AB4 /* MotionManager.swift in Sources */,
 				48BF84B2264655DE00CA7AB4 /* SessionView.swift in Sources */,
 				488C22E82636FD2700EB72F2 /* ContentView.swift in Sources */,
 				488C22EE2636FD2700EB72F2 /* ComplicationController.swift in Sources */,
 				48BF84B62646F81400CA7AB4 /* ButtonViews.swift in Sources */,
+				483B653B265B3AAD0036297D /* Extensions.swift in Sources */,
 				488C22E62636FD2700EB72F2 /* AIWorkout_Collector_App.swift in Sources */,
 				488C22EC2636FD2700EB72F2 /* NotificationView.swift in Sources */,
 				487F85112648E0B300736B20 /* ServerManager.swift in Sources */,
-				48784B5126574CC500201FEB /* MotionManagerButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
