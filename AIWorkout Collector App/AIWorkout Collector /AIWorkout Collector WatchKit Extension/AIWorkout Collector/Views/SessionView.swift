@@ -39,8 +39,6 @@ struct StartButton: View {
     
     var body: some View {
         Button {
-//            healthKitManager.start()
-            motionManager.start()
             testingPhase = .inProgress
         } label: {
             ActionCircleView(label: "Start", systemName: "play.fill", color: .blue)
@@ -53,7 +51,14 @@ struct RecordButton: View {
     
     var body: some View {
         Button {
-            testingPhase = .recordingInProgress
+            healthKitManager.start { success in
+                if success {
+                    motionManager.start()
+                    testingPhase = .recordingInProgress
+                } else {
+                    print("Error starting HealthKitManager")
+                }
+            }
         } label: {
             ActionCircleView(label: "Record", systemName: "video.fill", color: .red)
         }.buttonStyle(PlainButtonStyle())
