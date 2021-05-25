@@ -15,7 +15,7 @@ import HealthKit
 final class MotionManager: ObservableObject {
     let motionManager = CMMotionManager()
     let serverManager = ServerManager()
-    
+    var isSimulator = false
     @Published var accelerometerData: [[Double]] = []
     @Published var gyroData: [[Double]] = []
     @Published var deviceMotionData: [[Double]] = []
@@ -23,19 +23,21 @@ final class MotionManager: ObservableObject {
     @Published var mostRecentSession = Date()
     
     @Published var fileName = ""
+
 }
 
 
 // MARK: - MotionManager Functions
 
 extension MotionManager {
+    
     func start() {
         self.mostRecentSession = Date()
         
         let motionIsAvailible = motionManager.isAccelerometerAvailable
         let gyroIsAvailable = motionManager.isGyroAvailable
         let deviceMotionIsAvailible = motionManager.isDeviceMotionAvailable
-        
+        let timeStamp = Double((Date().timeIntervalSince1970) * 1000)
         if motionIsAvailible {
             motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
                 guard let data = data, error == nil else {
@@ -45,10 +47,11 @@ extension MotionManager {
                 
                 let timeStamp = Double((Date().timeIntervalSince1970) * 1000)
                 self.accelerometerData.append([data.acceleration.x, data.acceleration.y, data.acceleration.z, timeStamp])
-                
-                
-                print(data)
             }
+        } else {
+            isSimulator = true
+            self.accelerometerData.append([Double.random(in: 0...1), Double.random(in: 0...1), Double.random(in: 0...1), timeStamp])
+            
         }
         
         if gyroIsAvailable {
@@ -60,9 +63,10 @@ extension MotionManager {
                 let timeStamp = Double((Date().timeIntervalSince1970) * 1000)
                 
                 self.gyroData.append([data.rotationRate.x, data.rotationRate.y, data.rotationRate.z, timeStamp])
-                
-                print(data)
             }
+        } else {
+            self.gyroData.append([Double.random(in: 0...1), Double.random(in: 0...1), Double.random(in: 0...1), timeStamp])
+            
         }
         
         if deviceMotionIsAvailible {
@@ -74,8 +78,10 @@ extension MotionManager {
                 let timeStamp = Double((Date().timeIntervalSince1970) * 1000)
                 
                 self.deviceMotionData.append([data.attitude.quaternion.w, data.attitude.quaternion.x, data.attitude.quaternion.y, data.attitude.quaternion.z, data.attitude.pitch, data.attitude.roll, data.attitude.yaw, timeStamp])
-                print(data)
             }
+        } else {
+            self.deviceMotionData.append([Double.random(in: 0...1), Double.random(in: 0...1), Double.random(in: 0...1), timeStamp])
+            
         }
     }
     
@@ -91,10 +97,17 @@ extension MotionManager {
             "DeviceMotionData": deviceMotionData
         ]
         
+        var tag = ""
+        if (isSimulator) {
+            tag = "SIM"
+        } else {
+            tag = "DEV"
+        }
+        
         do {
             let sessionID = UUID().uuidString
-            let plistURL = URL(fileURLWithPath: "MotionData-\(sessionID)-\(fileLabel)", relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("plist")
-            fileName = "MotionData-\(sessionID)-\(fileLabel)"
+            fileName = "MotionData-\(sessionID)-\(fileLabel)-\(tag).plist"
+            let plistURL = URL(fileURLWithPath: fileName, relativeTo: FileManager.documentsDirectoryURL)
             let data = try encoder.encode(motionData)
             try data.write(to: plistURL, options: .atomicWrite)
         } catch let error {
@@ -103,8 +116,8 @@ extension MotionManager {
         
     }
     
-    func upload() {
-        serverManager.sendPostRequest(fileName: fileName)
+    func upload(completion: ((_ success: Bool) -> Void)!) {
+        serverManager.sendPostRequest(fileName: fileName, completion: completion)
     }
     
     func stop(actionType: ActionType) {
@@ -112,7 +125,14 @@ extension MotionManager {
         motionManager.stopGyroUpdates()
         motionManager.stopDeviceMotionUpdates()
         save(actionType: actionType)
-        upload()
+        upload { success in
+            if success {
+                print("Upload successful")
+            } else {
+                print("Error starting HealthKitManager")
+            }
+        }
+        
         accelerometerData = []
         gyroData = []
         deviceMotionData = []

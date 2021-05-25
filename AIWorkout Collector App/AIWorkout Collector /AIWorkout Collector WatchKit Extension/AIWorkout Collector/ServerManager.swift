@@ -8,18 +8,27 @@
 import Foundation
 
 class ServerManager {
-    let url = "http://176.9.10.139/uploader"
+    let url = "https://devknight.studio/uploader"
     var urlSession = URLSession.shared
     
-    func sendPostRequest(fileName: String) {
+    func sendPostRequest(fileName: String, completion: ((_ success: Bool) -> Void)!) {
+        let directory = FileManager.documentsDirectoryURL
         let fileBaseName = (fileName as NSString).lastPathComponent
-        let file: FileHandle? = FileHandle(forReadingAtPath: fileName)
+        
+        let fullFilePath = directory.appendingPathComponent(fileName)
+        let fullFilePathString = fullFilePath.absoluteString
+        
+        let file: FileHandle? = FileHandle(forReadingAtPath: fullFilePathString)
         let fullData = file?.readDataToEndOfFile()
         
         var request = URLRequest(
             url: URL(string: url)!,
             cachePolicy: .reloadIgnoringLocalCacheData
         )
+        
+        print(fileName)
+        print(fullData ?? "No Data (nil)")
+        print(fullFilePathString)
         
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -32,6 +41,11 @@ class ServerManager {
                 // Validate response and call handler
                 print(response ?? "Error printing response")
                 print(error ?? "Error printing error")
+                if error != nil {
+                    completion(false)
+                } else {
+                    completion(true)
+                }
             }
         )
         
