@@ -55,63 +55,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "414C1D40-5BE1-4AF2-ADDB-75FBD6ED17DA"
+            uuid = "78280EB7-84D6-4CF3-9E1E-11429FC84CA0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AIWorkout Collector WatchKit Extension/AIWorkout Collector/ServerManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "sendPostRequest(fileName:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "414C1D40-5BE1-4AF2-ADDB-75FBD6ED17DA - 1633fbcdacbc6e91"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AIWorkout_Collector_WatchKit_Extension.ServerManager.sendPostRequest(fileName: Swift.String, completion: Swift.Optional&lt;(Swift.Bool) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "AIWorkout Collector WatchKit Extension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aditya/Documents/Programming/AIWorkout-Collector-App/AIWorkout%20Collector%20App/AIWorkout%20Collector%20/AIWorkout%20Collector%20WatchKit%20Extension/AIWorkout%20Collector/ServerManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "2272">
-               </Location>
-               <Location
-                  uuid = "414C1D40-5BE1-4AF2-ADDB-75FBD6ED17DA - 42a9b62f49627c94"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in AIWorkout_Collector_WatchKit_Extension.ServerManager.sendPostRequest(fileName: Swift.String, completion: Swift.Optional&lt;(Swift.Bool) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "AIWorkout Collector WatchKit Extension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aditya/Documents/Programming/AIWorkout-Collector-App/AIWorkout%20Collector%20App/AIWorkout%20Collector%20/AIWorkout%20Collector%20WatchKit%20Extension/AIWorkout%20Collector/ServerManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "56F96907-B370-4771-B244-D05CCB38D133"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AIWorkout Collector WatchKit Extension/AIWorkout Collector/ServerManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "sendPostRequest(fileName:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -119,15 +71,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "134F955A-6886-4435-B592-CB0DD983B843"
+            uuid = "F5E902F5-D953-4BB5-850D-43DC25CF3791"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AIWorkout Collector WatchKit Extension/AIWorkout Collector/ServerManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "createDataBody(data:boundary:fileName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42699725-6E9E-418A-A4EB-898F0AEC4854"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AIWorkout Collector WatchKit Extension/AIWorkout Collector/ServerManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "sendPostRequest(fileName:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4FB6E08-25CD-4390-91B6-5788EEF88138"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AIWorkout Collector WatchKit Extension/AIWorkout Collector/ServerManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "sendPostRequest(fileName:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB9B190C-6329-46FA-B453-D9DAC53123C7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AIWorkout Collector WatchKit Extension/AIWorkout Collector/ServerManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "sendPostRequest(fileName:completion:)"
             landmarkType = "7">
          </BreakpointContent>
