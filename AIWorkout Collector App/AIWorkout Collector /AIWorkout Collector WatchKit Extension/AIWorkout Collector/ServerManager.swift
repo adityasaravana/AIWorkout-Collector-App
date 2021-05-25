@@ -19,7 +19,7 @@ class ServerManager {
         let fileBaseName = (fileName as NSString).lastPathComponent
         
         let fullFilePath = directory.appendingPathComponent(fileName)
-        print("Full file path - \(fullFilePath)")
+
         let fileHandle = try? FileHandle(forReadingFrom: fullFilePath)
         let fullData = fileHandle?.readDataToEndOfFile()
         
@@ -35,37 +35,37 @@ class ServerManager {
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
         var httpBody = Data()
-        let dataBody = createDataBody(data: fullData!, boundary: boundary, fileName: fileBaseName)
         let dataString = String(decoding: fullData!, as: UTF8.self)
-        let formFields = ["version": "1.0", "key": "12344321", "content": dataString]
+        let dataBody = createDataBody(data: dataString, boundary: boundary, fileName: fileBaseName)
+        let formFields = ["version": "1.0", "key": "12344321"]
         
         for (key, value) in formFields {
           httpBody.append(convertFormField(named: key, value: value, using: boundary))
         }
         
-        
         httpBody.append(dataBody)
         request.httpBody = httpBody
         request.setValue("\(httpBody.count)", forHTTPHeaderField: "Content-Length")
-        //        request.setValue("text/html; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         request.allowsCellularAccess = true
-        print(request.allHTTPHeaderFields)
-        
-        print(String(decoding: httpBody, as: UTF8.self))
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        
-        
+
         let task = urlSession.uploadTask(with: request, from: httpBody ) { data, response, error in
                 // Validate response and call handle
-                
-                print(response ?? "Error printing response")
+            if (error != nil) {
                 print(error ?? "Error printing error")
-                if (error != nil) {
-                    completion(false)
-                } else {
-                    completion(true)
-                }
+                completion(false)
+                return
+            }
+            
+            let httpResponse = response as? HTTPURLResponse
+            let statusCode = httpResponse!.statusCode
+            
+            if (statusCode != 200) {
+                completion(false)
+                print(response ?? "Error printing response")
+            } else {
+                print("File \(fullFilePath) uploaded successfully!")
+                completion(true)
+            }
         }
     
         task.resume()
@@ -86,15 +86,12 @@ class ServerManager {
 
     
     
-    func createDataBody(data: Data, boundary: String, fileName: String) -> Data {
-        
+    func createDataBody(data: String, boundary: String, fileName: String) -> Data {
         let lineBreak = "\r\n"
         var body = Data()
         
         body.append("--\(boundary + lineBreak)")
-        body.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(fileName)\"\(lineBreak)")
-        body.append("Content-Type: text/html; charset=utf-8\(lineBreak) \(lineBreak)")
-        //body.append("Content-Length: \(body.count)")
+        body.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(fileName)\"\(lineBreak)\(lineBreak)")
         body.append(data)
         body.append(lineBreak)
         
