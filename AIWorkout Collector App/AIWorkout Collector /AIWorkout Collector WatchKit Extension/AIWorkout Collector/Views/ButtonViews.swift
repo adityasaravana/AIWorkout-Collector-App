@@ -37,7 +37,7 @@ struct CircleLinkView: View {
     var body: some View {
         ZStack {
             Circle()
-                .frame(width: 80, height: 80)
+                .frame(width: 70, height: 70)
                 .foregroundColor(.green)
             Image(systemName: systemName)
                 .font(.system(size: 60))

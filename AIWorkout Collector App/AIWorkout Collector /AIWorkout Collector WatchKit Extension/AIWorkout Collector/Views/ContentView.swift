@@ -21,7 +21,7 @@ struct ContentView: View {
                 
                 LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .duck, systemName: "arrow.down")
             }
-        }
+        }.padding(.all)
     }
 }
 

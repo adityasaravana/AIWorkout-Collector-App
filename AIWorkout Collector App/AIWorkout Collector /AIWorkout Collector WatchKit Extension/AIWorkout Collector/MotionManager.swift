@@ -47,6 +47,7 @@ extension MotionManager {
                 
                 let timeStamp = Double((Date().timeIntervalSince1970) * 1000)
                 self.accelerometerData.append([data.acceleration.x, data.acceleration.y, data.acceleration.z, timeStamp])
+                print(data)
             }
         } else {
             isSimulator = true
@@ -63,6 +64,7 @@ extension MotionManager {
                 let timeStamp = Double((Date().timeIntervalSince1970) * 1000)
                 
                 self.gyroData.append([data.rotationRate.x, data.rotationRate.y, data.rotationRate.z, timeStamp])
+                print(data)
             }
         } else {
             self.gyroData.append([Double.random(in: 0...1), Double.random(in: 0...1), Double.random(in: 0...1), timeStamp])
