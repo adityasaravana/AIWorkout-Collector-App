@@ -12,14 +12,14 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
-                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .jump, systemName: "arrow.up")
+                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .constant(.jump), systemName: "arrow.up")
                 
-                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .dodgeRight, systemName: "arrow.right")
+                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .constant(.dodgeRight), systemName: "arrow.right")
             }.padding(.top, 20)
             HStack {
-                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .dodgeLeft, systemName: "arrow.left")
+                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .constant(.dodgeLeft), systemName: "arrow.left")
                 
-                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .duck, systemName: "arrow.down")
+                LinkButton(sheetIsPresented: $sheetIsPresented, actionType: .constant(.duck), systemName: "arrow.down")
             }
         }.padding(.all)
     }

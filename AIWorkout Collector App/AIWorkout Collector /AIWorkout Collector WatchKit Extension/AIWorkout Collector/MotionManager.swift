@@ -14,6 +14,7 @@ import HealthKit
 // MARK: - MotionManager Class
 final class MotionManager: ObservableObject {
     let motionManager = CMMotionManager()
+
     let serverManager = ServerManager()
     var isSimulator = false
     @Published var accelerometerData: [[Double]] = []
@@ -33,11 +34,11 @@ extension MotionManager {
     
     func start() {
         self.mostRecentSession = Date()
-        
+        motionManager.deviceMotionUpdateInterval = 0.01
+        motionManager.accelerometerUpdateInterval = 0.01    
         let motionIsAvailible = motionManager.isAccelerometerAvailable
         let gyroIsAvailable = motionManager.isGyroAvailable
         let deviceMotionIsAvailible = motionManager.isDeviceMotionAvailable
-        let timeStamp = Double((Date().timeIntervalSince1970) * 1000)
         if motionIsAvailible {
             motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
                 guard let data = data, error == nil else {
@@ -51,7 +52,7 @@ extension MotionManager {
             }
         } else {
             isSimulator = true
-            self.accelerometerData.append([Double.random(in: 0...1), Double.random(in: 0...1), Double.random(in: 0...1), timeStamp])
+            //self.accelerometerData.append([Double.random(in: 0...1), Double.random(in: 0...1), Double.random(in: 0...1), timeStamp])
             
         }
         
@@ -60,14 +61,14 @@ extension MotionManager {
                 guard let data = data, error == nil else {
                     return
                 }
-                
+                print(error ?? "Error printing error")
                 let timeStamp = Double((Date().timeIntervalSince1970) * 1000)
                 
                 self.gyroData.append([data.rotationRate.x, data.rotationRate.y, data.rotationRate.z, timeStamp])
                 print(data)
             }
         } else {
-            self.gyroData.append([Double.random(in: 0...1), Double.random(in: 0...1), Double.random(in: 0...1), timeStamp])
+            //self.gyroData.append([Double.random(in: 0...1), Double.random(in: 0...1), Double.random(in: 0...1), timeStamp])
             
         }
         
@@ -82,7 +83,7 @@ extension MotionManager {
                 self.deviceMotionData.append([data.attitude.quaternion.w, data.attitude.quaternion.x, data.attitude.quaternion.y, data.attitude.quaternion.z, data.attitude.pitch, data.attitude.roll, data.attitude.yaw, timeStamp])
             }
         } else {
-            self.deviceMotionData.append([Double.random(in: 0...1), Double.random(in: 0...1), Double.random(in: 0...1), timeStamp])
+            //self.deviceMotionData.append([Double.random(in: 0...1), Double.random(in: 0...1), Double.random(in: 0...1), timeStamp])
             
         }
     }
@@ -90,6 +91,9 @@ extension MotionManager {
     
     func save(actionType: ActionType) {
         let fileLabel = "\(actionType)".uppercased()
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print(fileLabel)
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
         

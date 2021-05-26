@@ -47,19 +47,22 @@ struct CircleLinkView: View {
 
 struct LinkButton: View {
     @Binding var sheetIsPresented: Bool
+    @Binding var actionType: ActionType
     
-    let actionType: ActionType
     let systemName: String
     
     var body: some View {
         Button {
             sheetIsPresented = true
+            print("??????????????????????????????????????")
+            print(actionType)
+            print("??????????????????????????????????????")
         } label: {
             CircleLinkView(systemName: systemName)
         }
         .buttonStyle(PlainButtonStyle())
         .sheet(isPresented: $sheetIsPresented) {
-            SessionView(actionType: actionType)
+            SessionView(actionType: $actionType)
         }
     }
 }

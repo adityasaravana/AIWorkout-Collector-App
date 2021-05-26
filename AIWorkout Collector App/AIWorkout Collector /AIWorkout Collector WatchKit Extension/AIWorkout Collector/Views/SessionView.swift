@@ -9,16 +9,21 @@ import SwiftUI
 
 struct SessionView: View {
     @State var currentTestingPhase = TestingPhase.notStarted
-    
-    let actionType: ActionType
+    var actionType: ActionType
     
     var body: some View {
         if currentTestingPhase == .notStarted {
             StartButton(testingPhase: $currentTestingPhase)
+                .onAppear {
+                    print("SESSIONVIEW")
+                    print(actionType)
+                    print("SESSIONVIEW")
+                }
         } else if currentTestingPhase == .inProgress {
             RecordButton(testingPhase: $currentTestingPhase)
         } else if currentTestingPhase == .recordingInProgress {
             FinishButton(testingPhase: $currentTestingPhase, actionType: actionType)
+                
         }
     }
 }
