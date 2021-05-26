@@ -16,7 +16,8 @@ final class MotionManager: ObservableObject {
     let motionManager = CMMotionManager()
 
     let serverManager = ServerManager()
-    var isSimulator = false
+    
+    @Published var isSimulator = false
     @Published var accelerometerData: [[Double]] = []
     @Published var gyroData: [[Double]] = []
     @Published var deviceMotionData: [[Double]] = []
@@ -24,7 +25,14 @@ final class MotionManager: ObservableObject {
     @Published var mostRecentSession = Date()
     
     @Published var fileName = ""
+    @Published var actionType = ActionType.invalid
 
+    class var sharedInstance: MotionManager {
+        struct Singleton {
+            static let instance = MotionManager()
+        }
+        return Singleton.instance
+    }
 }
 
 
@@ -88,7 +96,6 @@ extension MotionManager {
         }
     }
     
-    
     func save(actionType: ActionType) {
         let fileLabel = "\(actionType)".uppercased()
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -126,7 +133,7 @@ extension MotionManager {
         serverManager.sendPostRequest(fileName: fileName, completion: completion)
     }
     
-    func stop(actionType: ActionType) {
+    func stop() {
         motionManager.stopAccelerometerUpdates()
         motionManager.stopGyroUpdates()
         motionManager.stopDeviceMotionUpdates()

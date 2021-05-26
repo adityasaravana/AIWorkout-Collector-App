@@ -33,6 +33,7 @@ enum TestingPhase {
 }
 
 enum ActionType {
+    case invalid
     case jump
     case duck
     case dodgeRight

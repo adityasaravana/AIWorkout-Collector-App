@@ -9,20 +9,14 @@ import SwiftUI
 
 struct SessionView: View {
     @State var currentTestingPhase = TestingPhase.notStarted
-    var actionType: ActionType
     
     var body: some View {
         if currentTestingPhase == .notStarted {
             StartButton(testingPhase: $currentTestingPhase)
-                .onAppear {
-                    print("SESSIONVIEW")
-                    print(actionType)
-                    print("SESSIONVIEW")
-                }
         } else if currentTestingPhase == .inProgress {
             RecordButton(testingPhase: $currentTestingPhase)
         } else if currentTestingPhase == .recordingInProgress {
-            FinishButton(testingPhase: $currentTestingPhase, actionType: actionType)
+            FinishButton(testingPhase: $currentTestingPhase)
                 
         }
     }
@@ -30,14 +24,14 @@ struct SessionView: View {
 
 struct SessionView_Previews: PreviewProvider {
     static var previews: some View {
-        SessionView(actionType: .dodgeLeft)
+        SessionView()
     }
 }
 
 // MARK: - Buttons
 
-private let motionManager = MotionManager()
-private let healthKitManager = HealthKitManager()
+private let motionManager = MotionManager.sharedInstance
+private let healthKitManager = HealthKitManager.sharedInstance
 
 struct StartButton: View {
     @Binding var testingPhase: TestingPhase
@@ -74,11 +68,9 @@ struct FinishButton: View {
     @Binding var testingPhase: TestingPhase
     @Environment(\.presentationMode) var presentationMode
     
-    let actionType: ActionType
-    
     var body: some View {
         Button {
-            motionManager.stop(actionType: actionType)
+            motionManager.stop()
             healthKitManager.stop()
             presentationMode.wrappedValue.dismiss()
         } label: {
